@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-body text-ink antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    background-color: #b0d5cc;
+    color: #08322d;
+  }
+
+  /* Visible keyboard focus on every interactive element (WCAG 2.2 AA). */
+  :focus-visible {
+    outline: 3px solid #14665a;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-site px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-[44px] items-center justify-center whitespace-nowrap rounded-lg bg-pine-700 px-6 py-3 text-base font-semibold text-white transition-colors duration-150 hover:bg-pine-800 active:bg-pine-900;
+  }
+
+  .btn-quiet {
+    @apply inline-flex min-h-[44px] items-center justify-center whitespace-nowrap rounded-lg border border-pine-200 bg-white px-6 py-3 text-base font-semibold text-pine-800 transition-colors duration-150 hover:bg-pine-50 active:bg-pine-100;
+  }
+
+  .field-label {
+    @apply mb-2 block text-sm font-semibold text-ink;
+  }
+
+  .field-input {
+    @apply block min-h-[44px] w-full rounded-lg border border-ink-faint/50 bg-white px-3 py-2.5 text-base text-ink placeholder:text-ink-faint focus:border-pine-600;
+  }
+}
